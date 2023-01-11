@@ -141,5 +141,13 @@ export const Pet= {
     
     getFromName: (name:string): Pet[]=> {
         return data.filter(item=>item.name.toLowerCase().indexOf(name.toLowerCase())>-1);
+    },
+
+    getFromSex:(sex: string): Pet[]=> {
+        return data.filter(item=>item.sex=== sex);
+    },
+
+    getFromNameAndSex: (name:string, sex:string): Pet[]=> {
+        return data.filter(item=>item.name.toLowerCase().indexOf(name.toLowerCase())>-1 && item.sex===sex)
     }
 };

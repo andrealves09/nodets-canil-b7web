@@ -12,7 +12,16 @@
     <div class="container">
         <a href="/">PetDevShop</a>
         <form method="GET" action="/search">
-            <input type="search" name="q" placeholder="Pesquise por raça" value="{{query}}"/>
+            <input type="text" name="q" placeholder="Pesquise por raça" value="{{query}}"/>
+            <div class="sexo">
+                <input type="radio" name="sex" value="Todos" id="todos" checked>
+                <label for="todos">Todos</label>
+                <input type="radio" name="sex" value="Masculino" id="masculino" {{#checkQuerySexMas}}checked{{/checkQuerySexMas}}>
+                <label for="masculino">Masculino</label>
+                <input type="radio" name="sex" value="Feminino" id="feminino" {{#checkQuerySexFem}}checked{{/checkQuerySexFem}}>
+                <label for="feminino">Feminino</label>
+            </div>
+            <input type="submit" value="Submit" class="submit"/>
         </form>
     </div>
 </header>
